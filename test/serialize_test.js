@@ -23,10 +23,15 @@ describe('serialize', function () {
   it('Serialize', () => co(function * () {
     let serialized = serialize({
       date01: new Date(),
-      date02: new Date('1985/08/26'),
+      nested: {
+        date02: new Date('1985/08/26')
+      },
       error01: new Error()
+    }, {
+      indent: 2
     })
     assert.ok(serialized)
+    // console.log(serialized)
     assert.equal(typeof serialized, 'string')
 
     let deserialized = deserialize(serialized)
@@ -34,7 +39,7 @@ describe('serialize', function () {
     assert.equal(typeof deserialized, 'object')
     assert.ok(!deserialized.$$types)
     assert.ok(deserialized.date01 instanceof Date)
-    assert.equal(deserialized.date02 - new Date('1985/08/26'), 0)
+    assert.equal(deserialized.nested.date02 - new Date('1985/08/26'), 0)
   }))
 })
 
