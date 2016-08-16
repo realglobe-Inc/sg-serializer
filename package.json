@@ -1,6 +1,6 @@
 {
   "name": "sg-serializer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Serializer for SUGOS",
   "main": "lib",
   "scripts": {
