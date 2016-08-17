@@ -1,6 +1,6 @@
 {
   "name": "sg-serializer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Serializer for SUGOS",
   "main": "lib",
   "browser": "shim/browser.js",
