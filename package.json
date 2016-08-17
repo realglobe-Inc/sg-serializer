@@ -3,9 +3,10 @@
   "version": "1.0.1",
   "description": "Serializer for SUGOS",
   "main": "lib",
+  "browser": "shim/browser.js",
   "scripts": {
     "test": "./ci/test.js",
-    "prepublish": "./ci/build.js"
+    "prepublish": "./ci/build.js && ./ci/browser.js"
   },
   "repository": "realglobe-Inc/sg-serializer",
   "keywords": [
