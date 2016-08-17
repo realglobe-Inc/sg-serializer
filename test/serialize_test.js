@@ -24,7 +24,8 @@ describe('serialize', function () {
     let serialized = serialize({
       date01: new Date(),
       nested: {
-        date02: new Date('1985/08/26')
+        date02: new Date('1985/08/26'),
+        date03: [ new Date('1985/08/27'), new Date('1985/08/28') ]
       },
       error01: new Error()
     }, {
@@ -40,6 +41,7 @@ describe('serialize', function () {
     assert.ok(!deserialized.$$types)
     assert.ok(deserialized.date01 instanceof Date)
     assert.equal(deserialized.nested.date02 - new Date('1985/08/26'), 0)
+    assert.equal(deserialized.nested.date03[ 0 ] - new Date('1985/08/27'), 0)
   }))
 })
 

@@ -20,7 +20,8 @@ describe('deserialize', function () {
   }))
 
   it('Deserialize', () => co(function * () {
-
+    let deserialized = deserialize('[{"foo": "bar"}]')
+    assert.deepEqual(deserialized, [ { foo: 'bar' } ])
   }))
 })
 
