@@ -26,6 +26,14 @@ describe('format', function () {
     assert.ok(payload)
     assert.deepEqual(meta, { '/d1': 'builtin:date' })
   }))
+
+  it('Format Array', () => co(function * () {
+    let { meta, payload } = format([ {
+      d1: new Date()
+    } ])
+    assert.ok(payload)
+    assert.deepEqual(meta, { '/0/d1': 'builtin:date' })
+  }))
 })
 
 /* global describe, before, after, it */
