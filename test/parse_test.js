@@ -20,7 +20,22 @@ describe('parse', function () {
   }))
 
   it('Parse', () => co(function * () {
-
+    {
+      let parsed = parse([
+        'foo',
+        'bar',
+        'baz'
+      ])
+      assert.deepEqual(parsed, [ 'foo', 'bar', 'baz' ])
+    }
+    {
+      let parsed = parse({
+        foo: 'bar',
+        baz: new Date()
+      })
+      assert.ok(parsed.foo)
+      assert.ok(parsed.baz)
+    }
   }))
 })
 
