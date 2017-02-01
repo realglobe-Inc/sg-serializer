@@ -5,8 +5,8 @@
   "main": "lib",
   "browser": "shim/browser",
   "scripts": {
-    "test": "./ci/test.js",
-    "prepublish": "./ci/build.js && ./ci/browser.js"
+    "test": "node ./ci/test.js",
+    "preapre": "node ./ci/build.js && node ./ci/shim.js"
   },
   "repository": "realglobe-Inc/sg-serializer",
   "keywords": [
@@ -17,7 +17,7 @@
     "email": "okunishitaka.com@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-Inc/sg-serializer/issues"
   },
@@ -33,18 +33,15 @@
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
-    "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.15",
     "ape-updating": "^4.0.5",
     "coz": "^6.0.17",
-    "injectmock": "^2.0.0"
+    "injectmock": "^2.0.0",
+    "sugos-travis": "^2.0.6"
   },
   "engines": {
     "node": ">=6",
-    "npm": ">=3"
-  },
-  "publishConfig": {
-    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
+    "npm": ">=4"
   }
 }
