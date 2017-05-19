@@ -24,12 +24,12 @@
   "homepage": "https://github.com/realglobe-Inc/sg-serializer#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "json-pointer": "^0.5.0"
+    "json-pointer": "^0.6.0"
   },
   "devDependencies": {
-    "ababel": "^1.1.2",
-    "ababel-es2015": "^1.0.6",
-    "amocha": "^1.0.14",
+    "ababel": "^2.0.1",
+    "ababel-es2015": "^2.0.1",
+    "amocha": "^2.0.0",
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
