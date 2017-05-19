@@ -5,7 +5,7 @@
 'use strict'
 
 const parse = require('../lib/parse.js')
-const assert = require('assert')
+const { ok, equal, deepEqual } = require('assert')
 const co = require('co')
 
 describe('parse', function () {
@@ -26,15 +26,26 @@ describe('parse', function () {
         'bar',
         'baz'
       ])
-      assert.deepEqual(parsed, [ 'foo', 'bar', 'baz' ])
+      deepEqual(parsed, [ 'foo', 'bar', 'baz' ])
     }
     {
       let parsed = parse({
         foo: 'bar',
         baz: new Date()
       })
-      assert.ok(parsed.foo)
-      assert.ok(parsed.baz)
+      ok(parsed.foo)
+      ok(parsed.baz)
+      ok(parsed.baz instanceof Date)
+    }
+
+    {
+      let parsed = parse([ {
+        foo: 'bar',
+        baz: new Date()
+      } ])
+      ok(parsed[ 0 ].foo)
+      ok(parsed[ 0 ].baz)
+      ok(parsed[ 0 ].baz instanceof Date)
     }
   }))
 })

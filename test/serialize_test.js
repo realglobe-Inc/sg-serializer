@@ -38,7 +38,7 @@ describe('serialize', function () {
       indent: 2
     })
     assert.ok(serialized)
-    console.log(serialized)
+    // console.log(serialized)
     assert.equal(typeof serialized, 'string')
 
     let d = deserialize(serialized)

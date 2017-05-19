@@ -5,7 +5,7 @@
 'use strict'
 
 const deserialize = require('../lib/deserialize.js')
-const assert = require('assert')
+const { deepEqual } = require('assert')
 const co = require('co')
 
 describe('deserialize', function () {
@@ -21,7 +21,7 @@ describe('deserialize', function () {
 
   it('Deserialize', () => co(function * () {
     let deserialized = deserialize('[{"foo": "bar"}]')
-    assert.deepEqual(deserialized, [ { foo: 'bar' } ])
+    deepEqual(deserialized, [ { foo: 'bar' } ])
   }))
 })
 
