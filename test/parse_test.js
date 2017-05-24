@@ -43,6 +43,7 @@ describe('parse', function () {
         foo: 'bar',
         baz: new Date()
       } ])
+      ok(Array.isArray(parsed))
       ok(parsed[ 0 ].foo)
       ok(parsed[ 0 ].baz)
       ok(parsed[ 0 ].baz instanceof Date)
